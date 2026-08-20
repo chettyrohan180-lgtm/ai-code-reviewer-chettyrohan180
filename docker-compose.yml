@@ -1,0 +1,37 @@
+services:
+  ai-code-reviewer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-code-reviewer-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      # Mount private key secrets directory read-only
+      - ./secrets:/app/secrets:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  # Optional ngrok sidecar for exposing local webhook to GitHub
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ai-code-reviewer-ngrok
+    restart: unless-stopped
+    ports:
+      - "4040:4040"
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN:-}
+    command:
+      - "http"
+      - "ai-code-reviewer:8000"
+    depends_on:
+      - ai-code-reviewer
+    profiles:
+      - tunnel
