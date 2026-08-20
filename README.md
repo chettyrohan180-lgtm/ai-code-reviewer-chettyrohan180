@@ -153,18 +153,15 @@ You can get the project code in two ways:
 Open your terminal (PowerShell, Command Prompt, or Bash) and run one of the following commands:
 * **HTTPS**:
   ```bash
-  git clone https://github.com/Rohanchetty-25/Rohanchetty-25.git
-  cd "my 1st git project"
+  https://github.com/chettyrohan180-lgtm/ai-code-reviewer-chettyrohan180.git
   ```
 * **SSH**:
   ```bash
-  git clone git@github.com:Rohanchetty-25/Rohanchetty-25.git
-  cd "my 1st git project"
+  git@github.com:chettyrohan180-lgtm/ai-code-reviewer-chettyrohan180.git
   ```
 * **GitHub CLI**:
   ```bash
-  gh repo clone Rohanchetty-25/Rohanchetty-25
-  cd "my 1st git project"
+  gh repo clone chettyrohan180-lgtm/ai-code-reviewer-chettyrohan180
   ```
 
 #### Option B: Download as a ZIP File
