@@ -24,7 +24,6 @@ An event-driven, multi-agent automated code review system built with **FastAPI**
 - [Method B: Docker & Docker Compose (Production Deployment)](#-method-b-docker--docker-compose-production-deployment)
 - [ Project Directory Structure](#-project-directory-structure)
 - [ Troubleshooting & FAQs](#-troubleshooting--faqs)
-- [ License](#-license)
 
 ---
 
@@ -637,7 +636,3 @@ my 1st git project/
 * **Solution**: Verify your target provider and API keys in `.env`. Alternatively, configure `LLM_PROVIDER=mock` to run without API requirements.
 
 ---
-
-## License
-
-This project is licensed under the **MIT License**. Feel free to use, modify, and distribute it for personal and commercial projects.
